@@ -1,0 +1,60 @@
+const express = require('express');
+const app = express();
+const fs = require('fs');
+const bodyparser = require("body-parser");
+const open = require("opn");
+const joi = require("joi");
+
+//get
+app.get('/users',(req,res)=>{
+    res.json(require("./users.json"));
+});
+
+//post
+app.use(express.json());
+app.post('/users',({body},res)=>{
+    const schema = joi.object({
+        firstName: joi.string().required(),
+        lastName: joi.string().required(),
+        birthDate: joi.date().iso().required(),
+        email: joi.string().email().required(),
+        avatarUrl: joi.string().uri().required(),
+        gender: joi.string().max(1).required()  
+    });
+    const {error} = schema.validate(body);
+    
+    if(error){
+        res.status(422);
+        return res.json({error: error.details}); 
+    }
+    const users = require('./users.json');
+    const newUser = {
+        lastName:body.lastName.toUpperCase(),
+        firstName:body.firstName,
+        email:body.email,
+        birthDate:body.birthDate,
+        avatarUrl:body.avatarUrl,
+        gender:body.gender,
+        id:Math.max(...users.map(users=>users.id))+1
+    };
+
+    users.push(newUser);
+    fs.writeFileSync('users.json', JSON.stringify(users));
+    res.json(newUser);
+});
+
+//put
+/*app.params('id',(req,res,next,id)=>{
+    req.id = id;
+    next();
+});
+app.put('/users/:id',(req,res, next)=>{
+    res.end(req.params.id);
+    next();
+});*/
+
+
+app.listen(12345, ()=>{
+    console.log("Le serveur est lancer sur le port 12345 ! ");
+    //open("http://localhost:12345/users", "api json");
+});
