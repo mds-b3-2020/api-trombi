@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "firstName": "Chloé",
+        "lastName": "GALLEGO",
+        "email": "chloe.gallego-pelegrin@my-digital-school.org",
+        "birthDate": "2000-01-15",
+        "avatarUrl": "",
+        "gender": "f"
+    },
+    {
+        "id": 2,
+        "firstName": "Emilie",
+        "lastName": "ARQUILLIERE",
+        "email": "emilie.arquilliere@my-digital-school.org",
+        "birthDate": "1999-03-05",
+        "avatarUrl": "",
+        "gender": "f"
+    },
+    {
+        "id": 3,
+        "firstName": "Florian",
+        "lastName": "BIQUE",
+        "email": "florian.bique@my-digital-school.org",
+        "birthDate": "1998-03-14",
+        "avatarUrl": "",
+        "gender": "m"
+    },
+    {
+        "id": 4,
+        "firstName": "Jordan",
+        "lastName": "BRETTON",
+        "email": "jordan.bretton@my-digital-school.org",
+        "birthDate": "1993-11-03",
+        "avatarUrl": "",
+        "gender": "m"
+    },
+    {
+        "id": 5,
+        "firstName": "Yoann",
+        "lastName": "CÔTE",
+        "email": "yoann.cote@my-digital-school.org",
+        "birthDate": "0000-00-00",
+        "avatarUrl": "",
+        "gender": "m"
+    },
+    {
+        "id": 6,
+        "firstName": "Gabrielle",
+        "lastName": "GEROUDET-RASTOIX",
+        "email": "gabrielle.geroudet-rastoix@my-digital-school.org",
+        "birthDate": "2000-03-11",
+        "avatarUrl": "",
+        "gender": "f"
+    },
+    {
+        "id": 7,
+        "firstName": "Antoine",
+        "lastName": "MARTIN",
+        "email": "antoine.martin@my-digital-school.org",
+        "birthDate": "0000-00-00",
+        "avatarUrl": "",
+        "gender": "m"
+    }
+]
